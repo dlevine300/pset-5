@@ -2,9 +2,11 @@ window.onload = function() {
     // add event listeners to respond to button clicks
 }
 
-/*
- * Exercise 1.
- */
+function draw() {
+  var ctx = document.getElementById('canvas').getContext('2d');
+  ctx.font = '48px sans-serif';
+  ctx.fillText('Hello world', 10, 50);
+}
 
 const sayHello = function() {
 
@@ -15,7 +17,7 @@ const sayHello = function() {
  */
 
 const drawRectangle = function() {
-    
+
 };
 
 /*
@@ -23,7 +25,7 @@ const drawRectangle = function() {
  */
 
 const drawColoredRectangle = function() {
-    
+
 };
 
 /*
@@ -31,7 +33,7 @@ const drawColoredRectangle = function() {
  */
 
 const drawTriangle = function() {
-    
+
 };
 
 /*
@@ -39,7 +41,7 @@ const drawTriangle = function() {
  */
 
 const drawFace = function() {
-    
+
 };
 
 /*
@@ -47,5 +49,5 @@ const drawFace = function() {
  */
 
 const drawPyramid = function() {
-    
+
 };
