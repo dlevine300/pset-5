@@ -21,14 +21,22 @@ window.onload = function() {
     document.getElementById("hello").onclick = sayHello;
 }
 
-/*
- * Exercise 1.
- */
-
 const sayHello = function() {
-    // write your exercise 1 code here
-};
+  const canvas = document.getElementById('student-canvas-1');
+  const canvas_ctx = canvas.getContext('2d');
+  canvas_ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+
+  do {
+    var input = prompt("Message: ")
+    if (input.length > 50) {
+      alert("Your message is too long. Keep it under 50 characters")
+    }
+  } while(input.length > 50)
+
+  canvas_ctx.font = "48px sans-serif";
+  canvas_ctx.strokeText(input, 30, 70, 994);
+};
 /*
  * Exercise 2.
  */
