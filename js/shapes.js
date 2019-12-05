@@ -19,46 +19,49 @@ window.onload = function() {
     // equivalent set of six event listeners for your solutions. the first one is done for you.
 
     document.getElementById("hello").onclick = sayHello;
+    document.getElementById("Rectangle").onclick = drawRectangle;
 }
+
+/*
+ * Exercise 1.
+ */
 
 const sayHello = function() {
   const canvas = document.getElementById('student-canvas-1');
-  const canvas_ctx = canvas.getContext('2d');
-  canvas_ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const canvas_ctx = canvas.getContext('2d');
+    canvas_ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 
-  do {
-    var input = prompt('Message: ')
-    if (input.length > 50) {
-      alert('Your message is too long. Keep it under 50 characters')
-    }
-  } while(input.length > 50)
+    do {
+      var input = prompt('Message: ')
+      if (input.length > 50) {
+        alert('Your message is too long. Keep it under 50 characters')
+      }
+    } while(input.length > 50)
 
-  canvas_ctx.font = '48px sans-serif';
-  canvas_ctx.strokeText(input, 30, 70, 994);
+    canvas_ctx.font = '48px sans-serif';
+    canvas_ctx.strokeText(input, 30, 70, 994);
 };
+
 /*
  * Exercise 2.
  */
-    document.getElementById("rectangle-sample").onclick = drawRectangle
-}
+
  const drawRectangle = function() {
-   const canvas1 = document.getElementById('student-canvas-2');
-   const canvas1_ctx = canvas.getContext('2d');
+   const canvas = document.getElementById('student-canvas-2');
+     const canvas_ctx = canvas.getContext('2d');
+     canvas_ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-   do {
-     var input_Width = prompt('Width: ')
-     var input_Height = prompt('Height: ')
-     var input_X = prompt('X: ')
-     var input_Y = prompt('Y: ')
-     if (input.length > 50) {
-       alert('Your message is too long. Keep it under 50 characters')
-     }
-   } while(input.length > 50)
+     do {
+       //figure out how end process if user clicks cancel
+       var input_Width = prompt('Width: ')
+       var input_Height = prompt('Height: ')
+       var input_X = prompt('X: ')
+       var input_Y = prompt('Y: ')
+     } while (input_X.length < 1 || input_Y.length < 1 || input_Width.length < 1 || input_Height.length < 1);
 
-   canvas1_ctx.font = '48 sans-serif';
- };
-
+     canvas_ctx.strokeRect(input_X, input_Y, input_Width, input_Height);
+   };
 /*
  * Exercise 3.
  */
