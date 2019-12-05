@@ -28,22 +28,36 @@ const sayHello = function() {
 
 
   do {
-    var input = prompt("Message: ")
+    var input = prompt('Message: ')
     if (input.length > 50) {
-      alert("Your message is too long. Keep it under 50 characters")
+      alert('Your message is too long. Keep it under 50 characters')
     }
   } while(input.length > 50)
 
-  canvas_ctx.font = "48px sans-serif";
+  canvas_ctx.font = '48px sans-serif';
   canvas_ctx.strokeText(input, 30, 70, 994);
 };
 /*
  * Exercise 2.
  */
+    document.getElementById("rectangle-sample").onclick = drawRectangle
+}
+ const drawRectangle = function() {
+   const canvas1 = document.getElementById('student-canvas-2');
+   const canvas1_ctx = canvas.getContext('2d');
 
-const drawRectangle = function() {
-    // write your exercise 2 code here
-};
+   do {
+     var input_Width = prompt('Width: ')
+     var input_Height = prompt('Height: ')
+     var input_X = prompt('X: ')
+     var input_Y = prompt('Y: ')
+     if (input.length > 50) {
+       alert('Your message is too long. Keep it under 50 characters')
+     }
+   } while(input.length > 50)
+
+   canvas1_ctx.font = '48 sans-serif';
+ };
 
 /*
  * Exercise 3.
