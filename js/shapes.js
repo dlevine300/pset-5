@@ -60,7 +60,8 @@ const sayHello = function() {
        var input_Y = prompt('Y: ')
      } while (input_X.length < 1 || input_Y.length < 1 || input_Width.length < 1 || input_Height.length < 1);
 
-     ctx1.strokeRect(input_X, input_Y, input_Width, input_Height);
+     ctx1.rect(x, y, width, height);
+     ctx1.stroke();
    };
 /*
  * Exercise 3.
