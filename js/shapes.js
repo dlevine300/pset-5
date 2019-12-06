@@ -28,8 +28,8 @@ window.onload = function() {
 
 const sayHello = function() {
   const canvas = document.getElementById('student-canvas-1');
-    const canvas_ctx = canvas.getContext('2d');
-    canvas_ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 
     do {
@@ -39,8 +39,8 @@ const sayHello = function() {
       }
     } while(input.length > 50)
 
-    canvas_ctx.font = '48px sans-serif';
-    canvas_ctx.strokeText(input, 30, 70, 994);
+    ctx.font = '48px sans-serif';
+    ctx.strokeText(input, 30, 70, 994);
 };
 
 /*
@@ -49,8 +49,8 @@ const sayHello = function() {
 
  function drawRectangle() {
    const canvas = document.getElementById('student-canvas-2');
-     const canvas_ctx1 = canvas.getContext('2d');
-     canvas_ctx1.clearRect(0, 0, canvas.width, canvas.height)
+     const ctx1 = canvas.getContext('2d');
+     ctx1.clearRect(0, 0, canvas.width, canvas.height);
 
      do {
        //figure out how end process if user clicks cancel
@@ -60,7 +60,7 @@ const sayHello = function() {
        var input_Y = prompt('Y: ')
      } while (input_X.length < 1 || input_Y.length < 1 || input_Width.length < 1 || input_Height.length < 1);
 
-     canvas_ctx1.strokeRect(input_X, input_Y, input_Width, input_Height);
+     ctx1.strokeRect(input_X, input_Y, input_Width, input_Height);
    };
 /*
  * Exercise 3.
