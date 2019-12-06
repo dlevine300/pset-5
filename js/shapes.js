@@ -49,8 +49,8 @@ const sayHello = function() {
 
  const drawRectangle = function() {
    const canvas = document.getElementById('student-canvas-2');
-     const canvas_ctx = canvas.getContext('2d');
-     canvas_ctx.clearRect(0, 0, canvas.width, canvas.height)
+     const canvas_ctx1 = canvas.getContext('2d');
+     canvas_ctx1.clearRect(0, 0, canvas.width, canvas.height)
 
      do {
        //figure out how end process if user clicks cancel
@@ -60,7 +60,7 @@ const sayHello = function() {
        var input_Y = prompt('Y: ')
      } while (input_X.length < 1 || input_Y.length < 1 || input_Width.length < 1 || input_Height.length < 1);
 
-     canvas_ctx.strokeRect(input_X, input_Y, input_Width, input_Height);
+     canvas_ctx1.strokeRect(input_X, input_Y, input_Width, input_Height);
    };
 /*
  * Exercise 3.
