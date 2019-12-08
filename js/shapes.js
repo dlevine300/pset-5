@@ -18,12 +18,12 @@ window.onload = function() {
     // there are six event listeners being added for the staff solutions. you'll have an
     // equivalent set of six event listeners for your solutions. the first one is done for you.
 
-    document.getElementById("hello").onclick = sayHello;
-    document.getElementById("Rectangle").onclick = drawRectangle;
-    document.getElementById("colored_rectangle").onclick = drawColoredRectangle;
-    document.getElementById("triangle").onclick = drawTriangle;
-    document.getElementById("smile").onclick = drawFace;
-    document.getElementById("pyramid").onclick = drawPyramid;
+    document.getElementById('hello').onclick = sayHello;
+    document.getElementById('Rectangle').onclick = drawRectangle;
+    document.getElementById('Colored').onclick = drawColoredRectangle;
+    document.getElementById('triangle').onclick = drawTriangle;
+    document.getElementById('smile').onclick = drawFace;
+    document.getElementById('pyramid').onclick = drawPyramid;
 }
 
 /*
@@ -57,24 +57,24 @@ const sayHello = function() {
    ctx1.clearRect(0, 0, canvas.width, canvas.height);
 
    do {
-     var width = prompt("Width: ")
-     var height = prompt("Height: ")
-     var x = prompt("X: ")
-     var y = prompt("Y: ")
+     var width = prompt('Width: ')
+     var height = prompt('Height: ')
+     var x = prompt('X: ')
+     var y = prompt('Y: ')
      if (width > 1024 || width < 1) {
-       alert("Your width must be between 1 and 1024.")
+       alert('Your width must be between 1 and 1024.')
      }
      if (height > 512 || height < 1) {
-       alert("Your height must be between 1 and 512.")
+       alert('Your height must be between 1 and 512.')
      }
      if (x < 1 || x > 1024) {
-       alert("Your x-coordinate must be between 1 and 1024.")
+       alert('Your x-coordinate must be between 1 and 1024.')
      }
      if (y < 1 || y > 512) {
-       alert("Your y-coordinate must be between 1 and 512.")
+       alert('Your y-coordinate must be between 1 and 512.')
      }
      if (isNaN(width) || isNaN(height) || isNaN(x) || isNaN(y)) {
-       alert("One of your values is not a number.")
+       alert('One of your values is not a number.')
      }
    } while (width > 1024 || width < 1 || height > 512 || height < 1 || x < 1 || x > 1024 || y < 1 || y > 512 || isNaN(width) || isNaN(height) || isNaN(x) || isNaN(y))
 
@@ -85,9 +85,28 @@ const sayHello = function() {
  * Exercise 3.
  */
 
-const drawColoredRectangle = function() {
-    // write your exercise 3 code here
-};
+ const drawColoredRectangle = function() {
+   const canvas = document.getElementById('student-canvas-3');
+   const ctx2 = canvas.getContext('2d');
+   ctx2.clearRect(0, 0, canvas.width, canvas.height);
+
+   do {
+     var input_color = (prompt("Color: "))
+     if (input_color == null) {
+       break;
+     }
+     color = String(input_color)
+     var input_color = input_color.toUpperCase()
+     if (color != "GREEN" && color != "BLACK" && color != "BLUE" && color != "ORANGE" && color != "PURPLE" && color != "RED" && color != "YELLOW") {
+       alert(color + " is not a supported color.")
+     }
+   } while (color != "GREEN" && color != "BLACK" && color != "BLUE" && color != "ORANGE" && color != "PURPLE" && color != "RED" && color != "YELLOW")
+
+   if (input_color != null) {
+     ctx2.fillStyle = color;
+     ctx2.fillRect(10, 10, 100, 50);
+   }
+ };
 
 /*
  * Exercise 4.
