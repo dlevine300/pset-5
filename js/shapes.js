@@ -20,6 +20,10 @@ window.onload = function() {
 
     document.getElementById("hello").onclick = sayHello;
     document.getElementById("Rectangle").onclick = drawRectangle;
+    document.getElementById("colored_rectangle").onclick = drawColoredRectangle;
+    document.getElementById("triangle").onclick = drawTriangle;
+    document.getElementById("smile").onclick = drawFace;
+    document.getElementById("pyramid").onclick = drawPyramid;
 }
 
 /*
@@ -47,22 +51,36 @@ const sayHello = function() {
  * Exercise 2.
  */
 
- function drawRectangle() {
+ const drawRectangle = function() {
    const canvas = document.getElementById('student-canvas-2');
-     const ctx1 = canvas.getContext('2d');
-     ctx1.clearRect(0, 0, canvas.width, canvas.height);
+   const ctx1 = canvas.getContext('2d');
+   ctx1.clearRect(0, 0, canvas.width, canvas.height);
 
-     do {
-       //figure out how end process if user clicks cancel
-       var input_Width = prompt('Width: ')
-       var input_Height = prompt('Height: ')
-       var input_X = prompt('X: ')
-       var input_Y = prompt('Y: ')
-     } while (input_X.length < 1 || input_Y.length < 1 || input_Width.length < 1 || input_Height.length < 1);
+   do {
+     var width = prompt("Width: ")
+     var height = prompt("Height: ")
+     var x = prompt("X: ")
+     var y = prompt("Y: ")
+     if (width > 1024 || width < 1) {
+       alert("Your width must be between 1 and 1024.")
+     }
+     if (height > 512 || height < 1) {
+       alert("Your height must be between 1 and 512.")
+     }
+     if (x < 1 || x > 1024) {
+       alert("Your x-coordinate must be between 1 and 1024.")
+     }
+     if (y < 1 || y > 512) {
+       alert("Your y-coordinate must be between 1 and 512.")
+     }
+     if (isNaN(width) || isNaN(height) || isNaN(x) || isNaN(y)) {
+       alert("One of your values is not a number.")
+     }
+   } while (width > 1024 || width < 1 || height > 512 || height < 1 || x < 1 || x > 1024 || y < 1 || y > 512 || isNaN(width) || isNaN(height) || isNaN(x) || isNaN(y))
 
-     ctx1.rect(x, y, width, height);
-     ctx1.stroke();
-   };
+   ctx1.rect(x, y, width, height);
+   ctx1.stroke();
+ };
 /*
  * Exercise 3.
  */
