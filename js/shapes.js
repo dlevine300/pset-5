@@ -96,11 +96,11 @@ const sayHello = function() {
        break;
      }
      color = String(input_color)
-     var input_color = input_color.toUpperCase()
-     if (color != "GREEN" && color != "BLACK" && color != "BLUE" && color != "ORANGE" && color != "PURPLE" && color != "RED" && color != "YELLOW") {
+     var input_color = input_color.toLowerCase()
+     if (color != "red" && color != "orange" && color != "yellow" && color != "green" && color != "blue" && color != "purple" && color != "black") {
        alert(color + " is not a supported color.")
      }
-   } while (color != "GREEN" && color != "BLACK" && color != "BLUE" && color != "ORANGE" && color != "PURPLE" && color != "RED" && color != "YELLOW")
+   } while (color != "red" && color != "orange" && color != "yellow" && color != "green" && color != "blue" && color != "purple" && color != "black")
 
    if (input_color != null) {
      ctx2.fillStyle = color;
