@@ -84,8 +84,12 @@ const sayHello = function() {
      }
    } while (width > 1024 || width < 1 || height > 512 || height < 1 || x < 1 || x > 1024 || y < 1 || y > 512 || isNaN(width) || isNaN(height) || isNaN(x) || isNaN(y))
 
-   ctx1.rect(x, y, width, height);
-   ctx1.stroke();
+   if (!(width == null) && !(height == null) && !(x == null) && !(y == null)) {
+    ctx1.beginPath();
+    ctx1.rect(x, y, width, height);
+    ctx1.closePath();
+    ctx1.stroke();
+  }
  };
 /*
  * Exercise 3.
