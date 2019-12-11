@@ -64,6 +64,12 @@ const sayHello = function() {
      if (width == null || height == null || x == null || y == null) {
       break;
     }
+       if (!(width == null) && !(height == null) && !(x == null) && !(y == null)) {
+    ctx1.beginPath();
+    ctx1.rect(x, y, width, height);
+    ctx1.closePath();
+    ctx1.stroke();
+  }
      if (width > 1024 || width < 1) {
       alert("Your width must be between 1 and 1024.")
     }
@@ -83,13 +89,6 @@ const sayHello = function() {
       alert("Your rectangle won't fit on the canvas.")
      }
    } while (width > 1024 || width < 1 || height > 512 || height < 1 || x < 1 || x > 1024 || y < 1 || y > 512 || isNaN(width) || isNaN(height) || isNaN(x) || isNaN(y))
-
-   if (!(width == null) && !(height == null) && !(x == null) && !(y == null)) {
-    ctx1.beginPath();
-    ctx1.rect(x, y, width, height);
-    ctx1.closePath();
-    ctx1.stroke();
-  }
  };
 /*
  * Exercise 3.
