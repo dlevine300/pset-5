@@ -168,7 +168,43 @@ if ((triangleBase * triangleBase + triangleHeight * triangleHeight == triangleHy
  */
 
 const drawFace = function() {
-    // write your exercise 4 code here
+    const canvas = document.getElementById('student-canvas-5');
+   const ctx4 = canvas.getContext('2d');
+   ctx4.clearRect(0, 0, canvas.width, canvas.height);
+
+   do {
+    var radius = (prompt("Radius: "))
+    if (radius == null) {
+      break;
+    }
+    if (radius < 32) {
+      alert('Your radius must be at least 32.')
+    }
+    if (radius > 256) {
+      alert("Your smiley face won't fit on the canvas.")
+    }
+    if (isNaN(radius)){
+      alert('Your radius is not a number.')
+    }
+  } while (radius > 256 || isNaN(radius) || radius < 32)
+  var mouth = 0.7 * radius
+  var eyes = 0.15 * radius
+  ctx4.beginPath();
+  ctx4.arc(512, 256, radius, 0, 2 * Math.PI);
+  ctx4.stroke();
+  ctx4.closePath();
+  ctx4.beginPath();
+  ctx4.arc(512, 256, mouth, 0, Math.PI);
+  ctx4.stroke();
+  ctx4.closePath();
+  ctx4.beginPath();
+ ctx4.arc(512 - 0.4 * radius, 256 - 0.4 * radius, eyes, 0, 2 * Math.PI);
+ ctx4.stroke();
+ ctx4.closePath();
+ ctx4.beginPath();
+ ctx4.arc(512 + 0.4 * radius, 256 - 0.4* radius, eyes, 0, 2 * Math.PI);
+ ctx4.stroke();
+ ctx4.closePath();
 };
 
 /*
