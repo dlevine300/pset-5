@@ -122,8 +122,45 @@ const sayHello = function() {
  */
 
  const drawTriangle = function() {
-   
+   const canvas = document.getElementById('student-canvas-4');
+  const ctx3 = canvas.getContext('2d');
+  ctx3.clearRect(0, 0, canvas.width, canvas.height);
+
+do {
+  var side1 = (prompt('Side 1: '))
+  var side2 = (prompt('Side 2: '))
+  var side3 = (prompt('Side 3: '))
+  var triangleHeight = Math.min(side1, side2, side3)
+  var triangleHypotenuse = Math.max(side1, side2, side3)
+  var triangleBase = Math.sqrt(triangleHypotenuse * triangleHypotenuse - triangleHeight * triangleHeight)
+
+  if (triangleBase <= 1 && triangleBase <= 1 && triangleHypotenuse <= 1) {
+    break;
+  }
+  side1 = Number(side1)
+  side2 = Number(side2)
+  side3 = Number(side3)
+  if (triangleBase * triangleBase + triangleHeight * triangleHeight != triangleHypotenuse * triangleHypotenuse || triangleBase == 0 || triangleHeight == 0 || triangleHypotenuse == 0 || side1 + side2 + side3 - triangleHypotenuse - triangleHeight != triangleBase) {
+    alert("That's not a valid right triangle")
+    if (isNaN(side1) || isNaN(side2) || isNaN(side3)) {
+      alert("One of your sides is not a number.")
+    }
+    if ((triangleBase > 1024) || (triangleHeight > 512) || (triangleHypotenuse > 524288)) {
+      alert("Your triangle won't fit on the canvas.")
+    }
 }
+} while ((Math.floor(triangleBase) * Math.floor(triangleBase) + triangleHeight * triangleHeight != triangleHypotenuse * triangleHypotenuse));
+if ((triangleBase * triangleBase + triangleHeight * triangleHeight == triangleHypotenuse * triangleHypotenuse) && (triangleBase < 1024 && triangleHeight < 512 && triangleHypotenuse < 1145) && (triangleBase != 0 && triangleHeight != 0 && triangleHypotenuse != 0) && (triangleBase != null && triangleHeight != null && triangleHypotenuse != null)) {
+    triangleHeight = triangleHeight + 25
+    triangleBase = triangleBase + 25
+    ctx3.beginPath();
+    ctx3.moveTo(25, 25);
+    ctx3.lineTo(25, triangleHeight);
+    ctx3.lineTo(triangleBase, triangleHeight)
+    ctx3.lineTo(25, 25)
+    ctx3.stroke();
+  }
+};
 
 
 /*
