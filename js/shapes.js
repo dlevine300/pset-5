@@ -64,19 +64,19 @@ const sayHello = function() {
      if ((width == null) || (height == null) || (x == null) || (y == null)){
        break;
      }
-     if else (width > 1024 || width < 1) {
+     if(width > 1024 || width < 1) {
        alert('Your width must be between 1 and 1024.')
      }
-     if else (height > 512 || height < 1) {
+     if (height > 512 || height < 1) {
        alert('Your height must be between 1 and 512.')
      }
-     if else (x < 1 || x > 1024) {
+     if (x < 1 || x > 1024) {
        alert('Your x-coordinate must be between 1 and 1024.')
      }
-     if else (y < 1 || y > 512) {
+     if (y < 1 || y > 512) {
        alert('Your y-coordinate must be between 1 and 512.')
      }
-     if else (isNaN(width) || isNaN(height) || isNaN(x) || isNaN(y)) {
+     if (isNaN(width) || isNaN(height) || isNaN(x) || isNaN(y)) {
        alert('One of your values is not a number.')
      }
    } while (width > 1024 || width < 1 || height > 512 || height < 1 || x < 1 || x > 1024 || y < 1 || y > 512 || isNaN(width) || isNaN(height) || isNaN(x) || isNaN(y))
