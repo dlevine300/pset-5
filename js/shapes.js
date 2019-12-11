@@ -18,12 +18,12 @@ window.onload = function() {
     // there are six event listeners being added for the staff solutions. you'll have an
     // equivalent set of six event listeners for your solutions. the first one is done for you.
 
-    document.getElementById('hello').onclick = sayHello;
-    document.getElementById('Rectangle').onclick = drawRectangle;
-    document.getElementById('Colored').onclick = drawColoredRectangle;
-    document.getElementById('triangle').onclick = drawTriangle;
-    document.getElementById('smile').onclick = drawFace;
-    document.getElementById('pyramid').onclick = drawPyramid;
+    document.getElementById("hello").onclick = sayHello;
+    document.getElementById("rectangle").onclick = drawRectangle;
+    document.getElementById("colored_rectangle").onclick = drawColoredRectangle;
+    document.getElementById("triangle").onclick = drawTriangle;
+    document.getElementById("smile").onclick = drawFace;
+    document.getElementById("pyramid").onclick = drawPyramid;
 }
 
 /*
