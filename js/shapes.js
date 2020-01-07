@@ -214,14 +214,11 @@ const drawPyramid = function () {
     var side = (prompt("Side: "))
     if (side == null) {
       break;
-    }
-    if (side < 1) {
+    } else if (side < 1) {
       alert("Your block size must be at least 1.")
-    }
-    if (side >= 101) {
+    } else if (side >= 101) {
       alert("Your pyramid won't fit on the canvas")
-    }
-    if (isNaN(side)) {
+    } else if (isNaN(side)) {
       alert("Your block size is not a number.")
     }
   } while (isNaN(side) || side >= 101 || side < 1)
@@ -229,7 +226,6 @@ const drawPyramid = function () {
             name = ( i - 1 ) * ( side / 2 );
             for ( j = i ; j <= 5; j++ ) {
                 ctx5.strokeRect( 10 + ( ( j - 1 ) * side ) - name, 512 - 10 - ( i  * side ), side, side);
-
               }
             }
           };
