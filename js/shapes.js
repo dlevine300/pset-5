@@ -206,26 +206,45 @@ const drawFace = function () {
  * Exercise 6 (extra credit).
  */
 
-const drawPyramid = function () {
-	const canvas = document.getElementById('student-canvas-6');
-  const ctx5 = canvas.getContext('2d');
+const drawPyramid = function() {
+  const canvas = document.getElementById('student-canvas-6');
+  const ctx = canvas.getContext('2d');
+  var distance = 0
+  var height_1 = 0
+  var distance_modifier = 0
+  var height_modifier = 0
+  var counter = 5
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   do {
     var side = (prompt("Side: "))
     if (side == null) {
       break;
-    } else if (side < 1) {
+    } 
+	  if (side < 1) {
       alert("Your block size must be at least 1.")
-    } else if (side >= 101) {
+    }
+	  if (side >= 101) {
       alert("Your pyramid won't fit on the canvas")
-    } else if (isNaN(side)) {
+    }
+	  if (isNaN(side)) {
       alert("Your block size is not a number.")
     }
   } while (isNaN(side) || side >= 101 || side < 1)
-  for ( i = 1 ; i <= 5 ; i++) {
-            name = ( i - 1 ) * ( side / 2 );
-            for ( j = i ; j <= 5; j++ ) {
-                ctx5.strokeRect( 10 + ( ( j - 1 ) * side ) - name, 512 - 10 - ( i  * side ), side, side);
-              }
-            }
-          };
+
+  for (i = 5; i > 0; i--) {
+    counter = i
+    while(counter >= 1) {
+      ctx.beginPath();
+      ctx.rect(10 + Number(distance), (502 - side) - Number(height_1), Number(side), Number(side));
+      ctx.stroke();
+      ctx.closePath();
+      distance = Number(distance) + Number(side)
+      counter--
+    }
+    distance_modifier++
+    distance = distance_modifier * (1/2 * side)
+    height_modifier++
+    height_1 = height_modifier * side
+  }
+};
